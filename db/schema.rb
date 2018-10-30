@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_111645) do
+ActiveRecord::Schema.define(version: 2018_10_30_171258) do
 
   create_table "bids", force: :cascade do |t|
     t.string "first_name"
     t.string "second_name"
-    t.integer "gender"
+    t.integer "gender", default: 1
     t.string "nationality"
-    t.integer "passport_id"
+    t.string "passport_id"
     t.string "email"
     t.string "phone"
     t.datetime "created_at", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_111645) do
     t.string "passport_authority"
     t.string "education_type"
     t.string "education_form"
-    t.boolean "hostel"
+    t.boolean "hostel", default: true
     t.string "arrival_date"
   end
 
