@@ -7,6 +7,16 @@
           <i class="nav-icon icon-list"></i> Заявки
         <% end %>
       </li>
+      <li class="nav-item">
+        <%= link_to admin_users_path, class: "nav-link" do %>
+          <i class="nav-icon icon-user"></i> Пользователи
+        <% end %>
+      </li>
+      <li class="nav-item mt-auto">
+        <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+          <i class="nav-icon fa fa-sign-out"></i> Выйти
+        <% end %>
+      </li>
     </ul>
   </nav>
 </div>
