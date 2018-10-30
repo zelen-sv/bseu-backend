@@ -1,0 +1,25 @@
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Список Заявок
+      <div class="card-header-actions">
+        <%= button_to 'Новая заявка', new_admin_bid_path, method: 'get', class: 'card-header-action btn btn-sm btn-primary' %>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm">
+        <thead>
+          <tr>
+            <th>Полное имя</th>
+            <th>Телефон</th>
+            <th>Дата</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @bids %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

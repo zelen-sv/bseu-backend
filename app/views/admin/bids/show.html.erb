@@ -1,0 +1,20 @@
+<div class="col-md-8">
+  <div class="card">
+    <div class="card-header">
+      <strong>Просмотр заявления</strong>
+      <%= link_to edit_admin_bid_path(@bid), class: "float-right" do %>
+        <i class="fa fa-edit"></i>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <%= render 'bid_form', { bid: @bid, disabled: true } %>
+    </div>
+    <div class="card-footer">
+      <%= button_to admin_bid_path(@bid, format: :pdf), method: 'get', class: "btn btn-sm btn-warning" do %>
+        <i class="fa fa-print"></i> Печать</button>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

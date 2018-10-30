@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BseuBackend</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body class="app header-fixed sidebar-fixed sidebar-lg-show">
+    <%= render 'shared/header' %>
+    <div class="app-body">
+      <%= render 'shared/sidebar' %>
+      <main class="main">
+        <div class="page-container">
+          <div class="animated fadeIn">
+            <%= render 'shared/alert' %>
+            <div class="row">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
