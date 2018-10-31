@@ -9,6 +9,6 @@ class AddColumnsToBid < ActiveRecord::Migration[5.2]
     add_column :bids, :hostel, :boolean
     add_column :bids, :arrival_date, :string
 
-    change_column :bids, :gender, :integer
+    change_column :bids, :gender, :integer, :using => 'case when gender then 1 else 2 end'
   end
 end
