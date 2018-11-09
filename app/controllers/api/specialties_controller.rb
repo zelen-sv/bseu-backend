@@ -3,13 +3,14 @@ class Api::SpecialtiesController < Api::ApplicationController
   before_action :set_locale
 
   def index
-    @specialties = Specialty.by_education_program(params[:education_program])
+    @specialties = Specialty.where(nil)
+    @specialties = @specialties.by_education_program(params[:education_program]) if params[:education_program].present?
     json_response(@specialties, :ok)
   end
 
   private
 
   def set_locale
-    I18n.locale = params[:locale].to_sym if params[:locale]
+    I18n.locale = params[:locale].to_sym if params[:locale].present?
   end
 end
