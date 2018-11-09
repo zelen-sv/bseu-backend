@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <strong>Просмотр специальности</strong>
+        <%= link_to edit_admin_specialty_path(@specialty), class: "float-right" do %>
+          <i class="fa fa-edit"></i>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <%= render 'specialty_form', { specialty: @specialty, disabled: true } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

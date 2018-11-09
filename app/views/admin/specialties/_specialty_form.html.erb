@@ -1,0 +1,89 @@
+<%= simple_form_for [:admin, specialty], class: "form-horizontal" do |f| %>
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= f.association :faculty, label: 'Выбор факультета', input_html: { class: 'select-select2 form-control' }, disabled: disabled %>
+    </div>
+    <div class="form-group">
+      <h5>Поля с интенационализацией</h5>
+      <%= render 'shared/locale_tabs' %>
+      <div class="tab-content">
+        <div class="tab-pane active show" id="russian">
+          <div class="form-group">
+            <%= f.input :title_ru, label: 'Название', input_html: { class: 'form-control' }, disabled: disabled %>
+          </div>
+          <div class="form-group">
+            <%= f.input :description_ru, as: :text, label: 'Описание', input_html: { class: 'form-control' }, disabled: disabled %>
+          </div>
+          <div class="form-group">
+            <%= f.input :qualification_ru, as: :array, label: 'Квалификации', input_html: { class: 'form-control array_input col-md-6' }, disabled: disabled %>
+          </div>
+          <div class="form-group form-actions">
+            <button class="btn btn-sm btn-primary" onclick="addAnotherField(event, 'specialty', 'qualification_ru');">
+              Добавить квалификацию
+            </button>
+          </div>
+        </div>
+        <div class="tab-pane" id="english">
+          <div class="form-group">
+            <%= f.input :title_en, label: 'Название', input_html: { class: 'form-control' }, disabled: disabled %>
+          </div>
+          <div class="form-group">
+            <%= f.input :description_en, as: :text, label: 'Описание', input_html: { class: 'form-control' }, disabled: disabled %>
+          </div>
+          <div class="form-group">
+            <%= f.input :qualification_en, as: :array, label: 'Квалификации', input_html: { class: 'form-control array_input col-md-6' }, disabled: disabled %>
+          </div>
+          <div class="form-group form-actions">
+            <button class="btn btn-sm btn-primary" onclick="addAnotherField(event, 'specialty', 'qualification_en');">
+              Добавить квалификацию
+            </button>
+          </div>
+        </div>
+        <div class="tab-pane" id="turkmen">
+            <div class="form-group">
+              <%= f.input :title_tm, label: 'Название', input_html: { class: 'form-control' }, disabled: disabled %>
+            </div>
+            <div class="form-group">
+              <%= f.input :description_tm, as: :text, label: 'Описание', input_html: { class: 'form-control' }, disabled: disabled %>
+            </div>
+            <div class="form-group">
+              <%= f.input :qualification_tm, as: :array, label: 'Квалификации', input_html: { class: 'form-control array_input col-md-6' }, disabled: disabled %>
+            </div>
+            <div class="form-group form-actions">
+              <button class="btn btn-sm btn-primary" onclick="addAnotherField(event, 'specialty', 'qualification_tm');">
+                Добавить квалификацию
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= f.input :education_program, collection: select_data_education_programs,
+                                     label_method: :second,
+                                     value_method: :first,
+                                     label: 'Программа обучения',
+                                     input_html: { class: 'select-select2 form-control' },
+                                     disabled: disabled %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.input :education_form, collection: select_data_education_forms,
+                                     label_method: :second,
+                                     value_method: :first,
+                                     label: 'Форма обучения',
+                                     input_html: { class: 'select-select2 form-control' },
+                                     disabled: disabled %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= f.input :term, label: 'Период обучения', input_html: { class: 'form-control' }, disabled: disabled %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.input :price, label: 'Стоимость', input_html: { class: 'form-control' }, disabled: disabled %>
+      </div>
+    </div>
+  </div>
+  <%= f.submit 'Сохранить' , class: "btn btn-sm btn-success" %>
+<% end %>
+

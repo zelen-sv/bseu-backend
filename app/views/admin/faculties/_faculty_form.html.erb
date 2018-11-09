@@ -1,0 +1,31 @@
+<%= simple_form_for [:admin, faculty], class: "form-horizontal" do |f| %>
+  <div class="form-group">
+    <h5>Поля с интенационализацией</h5>
+    <%= render 'shared/locale_tabs' %>
+    <div class="tab-content">
+      <div class="tab-pane active show" id="russian">
+        <div class="row">
+          <div class="form-group col-md-12">
+            <%= f.input :title_ru, label: 'Название на русском', input_html: { class: 'form-control' }, disabled: disabled %>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="english">
+        <div class="row">
+          <div class="form-group col-md-12">
+            <%= f.input :title_en, label: 'Название на англиском', input_html: { class: 'form-control' }, disabled: disabled %>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="turkmen">
+        <div class="row">
+          <div class="form-group col-md-12">
+            <%= f.input :title_tm, label: 'Название на туркменском', input_html: { class: 'form-control' }, disabled: disabled %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= f.submit 'Сохранить' , class: "btn btn-sm btn-success" %>
+<% end %>
+

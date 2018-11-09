@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_171258) do
+ActiveRecord::Schema.define(version: 2018_11_07_075252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,36 @@ ActiveRecord::Schema.define(version: 2018_10_30_171258) do
     t.string "arrival_date"
   end
 
+  create_table "faculties", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "faculty_translations", force: :cascade do |t|
+    t.integer "faculty_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title", null: false
+    t.index ["faculty_id"], name: "index_faculty_translations_on_faculty_id"
+    t.index ["locale"], name: "index_faculty_translations_on_locale"
+  end
+
+# Could not dump table "specialties" because of following StandardError
+#   Unknown type 'education_program' for column 'education_program'
+
+  create_table "specialty_translations", force: :cascade do |t|
+    t.integer "specialty_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "description"
+    t.string "qualification", default: [], array: true
+    t.index ["locale"], name: "index_specialty_translations_on_locale"
+    t.index ["specialty_id"], name: "index_specialty_translations_on_specialty_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -47,4 +77,5 @@ ActiveRecord::Schema.define(version: 2018_10_30_171258) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "specialties", "faculties"
 end

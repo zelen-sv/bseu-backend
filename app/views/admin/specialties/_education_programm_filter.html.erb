@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-md-3">
+  <div class="card">
+    <div class="card-header">Выбор программы обучения</div>
+    <div class="card-body">
+      <%= select_tag "education_program",
+                     options_from_collection_for_select(select_data_education_programs, "first", "second"),
+                     include_blank: true,
+                     class: "select-select2 select-select2_full-width",
+                     onchange: 'enableSpecialtyFilter()' %>
+    </div>
+  </div>
+</div>

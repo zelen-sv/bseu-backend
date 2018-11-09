@@ -1,0 +1,20 @@
+<tr>
+  <td><%= specialty.title_ru %></td>
+  <td><%= specialty.faculty.title_ru %></td>
+  <td><%= education_programs_text(specialty.education_program) %></td>
+  <td><%= education_forms_text(specialty.education_form) %></td>
+  <td>
+    <%= link_to duplicate_admin_specialty_path(specialty), method: "post", class: "btn btn-warning" do %>
+      <i class="fa fa-copy"></i>
+    <% end %>
+    <%= link_to admin_specialty_path(specialty), class: "btn btn-success" do %>
+      <i class="fa fa-search-plus"></i>
+    <% end %>
+    <%= link_to edit_admin_specialty_path(specialty), class: "btn btn-info" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to admin_specialty_path(specialty), method: 'delete', class: "btn btn-danger", data: {confirm: 'Вы уверены?'} do %>
+      <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+</tr>

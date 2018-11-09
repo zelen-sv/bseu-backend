@@ -1,0 +1,4 @@
+$('#specialties_table').empty();
+$('#specialties_table').html("<%= escape_javascript(render @specialties) %>");
+$('#pagination').empty();
+$('#pagination').html("<%= escape_javascript(paginate @specialties) %>");

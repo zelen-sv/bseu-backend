@@ -17,6 +17,8 @@
 @import "custom-variables";
 @import "coreui-free";
 @import "bootstrap-datepicker";
+@import "select2";
+@import "select2-bootstrap";
 
 
 .app-header.navbar {
@@ -47,5 +49,13 @@ input:focus, textarea:focus, select:focus, button:focus, a:focus{
 
 .card-header-action {
     padding: 0 .25rem;
+}
+
+.select-select2_full-width {
+  width: -webkit-fill-available;
+}
+
+.array_input {
+  margin-bottom: 15px;
 }
 

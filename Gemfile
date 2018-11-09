@@ -46,6 +46,13 @@ gem 'foreman'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'rack-cors', require: 'rack/cors'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
+gem 'globalize-accessors'
+gem 'globalize-validations'
+gem "select2-rails"
+gem "active_model_serializers", require: true
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

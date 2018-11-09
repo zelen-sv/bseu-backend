@@ -1,0 +1,21 @@
+<tr>
+  <td><%= faculty.title_ru %></td>
+  <td>
+    <%= button_to 'Открыть специальности',
+                  admin_specialties_path,
+                  params: { faculty_id: faculty.id },
+                  method: 'get',
+                  class: 'card-header-action btn btn-sm btn-primary' %>
+  </td>
+  <td>
+    <%= link_to admin_faculty_path(faculty), class: "btn btn-success" do %>
+      <i class="fa fa-search-plus"></i>
+    <% end %>
+    <%= link_to edit_admin_faculty_path(faculty), class: "btn btn-info" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to admin_faculty_path(faculty), method: 'delete', class: "btn btn-danger", data: {confirm: 'Вы уверены?'} do %>
+      <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+</tr>

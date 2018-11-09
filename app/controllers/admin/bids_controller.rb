@@ -8,7 +8,7 @@ class Admin::BidsController < ApplicationController
   end
 
   def index
-    @bids = Bid.all
+    @bids = Bid.order(created_at: :desc).page(params[:page]).per(15)
   end
 
   def show

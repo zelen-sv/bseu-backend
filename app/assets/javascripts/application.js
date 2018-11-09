@@ -15,4 +15,10 @@
 //= require coreui-free
 //= require bootstrap-datepicker
 //= require data-confirm-modal
+//= require select2
 //= require_tree .
+
+
+$(document).ready(function() {
+    $('.select-select2').select2();
+});

@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-md-6">
+  <div class="card">
+    <div class="card-header">Выбор факультета</div>
+    <div class="card-body">
+      <%= select_tag "faculties",
+                     options_from_collection_for_select(@faculties, "id", "title"),
+                     include_blank: true,
+                     class: "select-select2 select-select2_full-width",
+                     onchange: 'enableSpecialtyFilter()' %>
+    </div>
+  </div>
+</div>
