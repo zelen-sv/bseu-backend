@@ -3,7 +3,7 @@
   <td><%= specialty.faculty.title_ru %></td>
   <td><%= education_programs_text(specialty.education_program) %></td>
   <td><%= education_forms_text(specialty.education_form) %></td>
-  <td>
+  <td class="table-actions-td">
     <%= link_to duplicate_admin_specialty_path(specialty), method: "post", class: "btn btn-warning" do %>
       <i class="fa fa-copy"></i>
     <% end %>
