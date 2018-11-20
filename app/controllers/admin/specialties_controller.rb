@@ -13,6 +13,7 @@ class Admin::SpecialtiesController < ApplicationController
     @specialties = @specialties.by_education_form(params[:education_form]) if params[:education_form].present?
     @specialties = @specialties.by_title(params[:specialty_title]) if params[:specialty_title].present?
     @specialties = @specialties.order(created_at: :desc).page(params[:page]).per(15)
+    @specialties_titles = Specialty.titles
     @faculties = Faculty.all
   end
 

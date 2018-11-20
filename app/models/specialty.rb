@@ -24,6 +24,7 @@ class Specialty < ApplicationRecord
   scope :by_title, -> (title) { with_translations.where('title ILIKE ?', title) }
   scope :by_education_program, -> (education_program) { where education_program: education_program }
   scope :by_education_form, -> (education_form) { where education_form: education_form }
+  scope :titles, -> { with_translations(:ru).pluck(:title).uniq }
 
   private
 

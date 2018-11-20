@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <%= select_tag "specialties",
-                     options_from_collection_for_select(@specialties, "title", "title_ru"),
+                     options_for_select(specialties),
                      include_blank: true,
                      class: "select-select2 select-select2_full-width",
                      onchange: 'enableSpecialtyFilter()' %>
