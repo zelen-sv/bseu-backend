@@ -21,6 +21,7 @@ class Specialty < ApplicationRecord
   before_save :remove_blank_qualifications
 
   scope :by_faculty, -> (faculty_id) { where faculty_id: faculty_id }
+  scope :by_title, -> (title) { with_translations.where('title ILIKE ?', title) }
   scope :by_education_program, -> (education_program) { where education_program: education_program }
   scope :by_education_form, -> (education_form) { where education_form: education_form }
 
