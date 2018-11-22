@@ -3,7 +3,7 @@
     <div class="card-header">Выбор формы обучения</div>
     <div class="card-body">
       <%= select_tag "education_form",
-                     options_from_collection_for_select(select_data_education_forms, "first", "second"),
+                     options_from_collection_for_select(education_forms_for_select, "first", "second"),
                      include_blank: true,
                      class: "select-select2 select-select2_full-width",
                      onchange: 'enableSpecialtyFilter()' %>

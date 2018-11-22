@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, specialty], class: "form-horizontal" do |f| %>
   <div class="col-md-12">
     <div class="form-group">
-      <%= f.association :faculty, label_method: :title_ru, value_method: :id, label: 'Выбор факультета', input_html: { class: 'select-select2 form-control' }, disabled: disabled %>
+      <%= f.association :faculty, label_method: :title, value_method: :id, label: 'Выбор факультета', input_html: { class: 'select-select2 form-control' }, disabled: disabled %>
     </div>
     <div class="form-group">
       <h5>Поля с интенационализацией</h5>
@@ -59,7 +59,7 @@
     </div>
     <div class="row">
       <div class="form-group col-md-6">
-        <%= f.input :education_program, collection: select_data_education_programs,
+        <%= f.input :education_program, collection: education_programs_for_select,
                                      label_method: :second,
                                      value_method: :first,
                                      label: 'Программа обучения',
@@ -67,7 +67,7 @@
                                      disabled: disabled %>
       </div>
       <div class="form-group col-md-6">
-        <%= f.input :education_form, collection: select_data_education_forms,
+        <%= f.input :education_form, collection: education_forms_for_select,
                                      label_method: :second,
                                      value_method: :first,
                                      label: 'Форма обучения',

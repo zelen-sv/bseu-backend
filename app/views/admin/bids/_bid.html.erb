@@ -1,7 +1,7 @@
 <tr>
   <td><%= full_name(bid) %></td>
   <td><%= bid.phone %></td>
-  <td><%= bid.created_at %></td>
+  <td><%= l bid.created_at, format: :long %></td>
   <td class="table-actions-td">
     <%= link_to admin_bid_path(bid), class: "btn btn-success" do %>
       <i class="fa fa-search-plus"></i>

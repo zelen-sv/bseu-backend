@@ -1,20 +1,17 @@
 module Admin::SpecialtiesHelper
-  PROGRAM_TITLES = ["Первое высшее", "Второе высшее", "Магистратура", "Переподготовка"].freeze
-  FORM_TITLES = ["Очно", "Заочно", "Дистанционно"].freeze
-
-  def select_data_education_programs
-    Hash[Specialty.education_programs.keys.map.with_index {|prog, index| [prog, PROGRAM_TITLES[index]] }]
+  def education_forms_for_select
+    Specialty.education_forms.keys.map {|form| [form, education_form_text(form)] }
   end
 
-  def select_data_education_forms
-    Hash[Specialty.education_forms.keys.map.with_index {|prog, index| [prog, FORM_TITLES[index]] }]
+  def education_programs_for_select
+    Specialty.education_programs.keys.map {|program| [program, education_program_text(program)] }
   end
 
-  def education_programs_text(program)
-    select_data_education_programs[program]
+  def education_program_text(enum_value)
+    I18n.t :"enum.education_program.#{enum_value}"
   end
 
-  def education_forms_text(form)
-    select_data_education_forms[form]
+  def education_form_text(enum_value)
+    I18n.t :"enum.education_form.#{enum_value}"
   end
 end

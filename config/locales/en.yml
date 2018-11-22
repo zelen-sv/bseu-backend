@@ -30,7 +30,3 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  errors:
-    messages:
-      blank: "Это поле не может быть пустым!"
