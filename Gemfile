@@ -53,6 +53,7 @@ gem 'globalize-validations'
 gem "select2-rails"
 gem "active_model_serializers", require: true
 gem 'kaminari'
+gem 'redis-namespace'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
