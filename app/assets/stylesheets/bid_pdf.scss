@@ -1,5 +1,6 @@
 .page {
   margin: 0 auto;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
   font-size: 16px;
 }
 
@@ -13,7 +14,7 @@
 }
 
 .page__header-text {
-  margin: 10px;
+  margin: 20px;
 }
 
 .page__header-text_name {
@@ -32,7 +33,7 @@
   width: 100%;
   text-align: center;
   font-weight: normal;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .page_table {
@@ -62,7 +63,7 @@
 }
 
 .page__section {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .page__section-title {
@@ -70,17 +71,15 @@
 }
 
 .page__section-checkboxes {
+  margin-top: 15px;
   display: flex;
 }
 
 .page__education-data__text {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .checkbox {
-  transform: scale(2);
-  -ms-transform: scale(2);
-  -webkit-transform: scale(2);
   margin: 0;
   margin-left: 20px;
 }
@@ -94,7 +93,7 @@ table, th, td {
 }
 
 td {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
