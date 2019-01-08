@@ -1,0 +1,115 @@
+<div class="page">
+  <div class="page__header">
+    <div class="page__header-container">
+      <p class="page__header-text">Ректору БГЭУ</p>
+      <p class="page__header-text">профессору Шимову В.Н.</p>
+      <p class="page__header-text page__header-text_name">
+
+      </p>
+      <p class="page__header-text page__header-text_name">
+              ООО «Акториус»
+      </p>
+      <p class="page__header-text page__header-text_description">(Наименование юридического лица, ходатайствующего о приглашении;)</p>
+    </div>
+  </div>
+  <h3 class="page__title">ЗАЯВЛЕНИЕ</h3>
+  <p class="page__text">
+    &nbsp;&nbsp;&nbsp;&nbsp;Прошу зарегистрировать иностранно гражданина для поступления/перевода в Учреждение образования «Белорусский государственный экономический университет».
+  </p>
+  <div class="page_table">
+    <div class="page_table__title">I.&#8195;&#8195;Личные данные абитуриента:</div>
+    <table style="width: 90%;">
+      <tbody>
+        <tr>
+          <td class="page_table__data-left">Фамилия</td>
+          <td class="page_table__data-right"><%= bid.second_name %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Имя</td>
+          <td class="page_table__data-right"><%= bid.first_name %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Пол</td>
+          <td class="page_table__data-right"><%= gender_text(bid.gender) %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Дата рождения</td>
+          <td class="page_table__data-right"><%= bid.birthday %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Гражданство</td>
+          <td class="page_table__data-right"><%= bid.nationality %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Номер паспорта</td>
+          <td class="page_table__data-right"><%= bid.passport_id %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Дата выдачи паспорта</td>
+          <td class="page_table__data-right"><%= bid.passport_starts_at %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Орган, выдавший паспорт</td>
+          <td class="page_table__data-right"><%= bid.passport_authority %></td>
+        </tr>
+        <tr>
+          <td class="page_table__data-left">Дата окончания действия паспорта</td>
+          <td class="page_table__data-right"><%= bid.passport_ends_at %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page__section">
+    <p class="page__section-title">II.&#8195;&#8195;Информация о выбранной программе обучения:</p>
+    <div class="page__section-checkboxes">
+        &nbsp;&nbsp;&nbsp;&nbsp;<%= check_box("tag", 'value', {class: "checkbox", checked: (bid.education_type == 'подготовительное отделение')}) %>
+        <span>- подготовительное отделение*;</span>
+        <%= check_box("tag", 'value', {class: "checkbox", checked: (bid.education_type == 'бакалавриат')}) %>
+        <span>- бакалавриат;</span>
+        <%= check_box("tag", 'value', {class: "checkbox", checked: (bid.education_type == 'магистратура')}) %>
+        <span>- магистратура**;</span>
+    </div>
+    <p class="page__education-data__text" style="width: 600px">
+      <span style="display: table-cell; width: 110px;">факультет </span>
+      <span style="display: table-cell; border-bottom: 1px solid black; width: 500px;"></span>
+    </p>
+    <p class="page__education-data__text" style="width: 600px">
+      <span style="display: table-cell; width: 110px;">специальность </span>
+      <span style="display: table-cell; border-bottom: 1px solid black; width: 500px;"></span>
+    </p>
+    <p class="page__education-data__text" style="width: 600px">
+      <span style="display: table-cell; width: 110px;">специализация </span>
+      <span style="display: table-cell; border-bottom: 1px solid black; width: 500px;"></span>
+    </p>
+    <p class="page__education-data__text">
+      форма обучения
+      &nbsp;&nbsp;<%= check_box("tag", 'value', {class: "checkbox", checked: (bid.education_form == 'очно')}) %>
+      <span>дневная</span>
+      &nbsp;&nbsp;<%= check_box("tag", 'value', {class: "checkbox", checked: (bid.education_form == 'заочно')}) %>
+      <span>заочная</span>
+    </p>
+    <p style="font-size: 13px;">
+      &#8195;&#8195;&#8195;<span>*абитуриенты, подающие заявления о поступлении на подготовительное отделение, не заполняют
+графы «факультет», «специальность», «специализация», «форма обучения»;</span><br />
+      &#8195;&#8195;&#8195;<span>** абитуриенты, подающие заявления о поступлении в магистратуру, заполняют только графы
+«специальность», «специализация», «форма обучения».</span>
+    </p>
+  </div>
+  <div class="page__section">
+    <div class="page__section-title">III.&#8195;&#8195;Потребность в общежитии:</div>
+    <div class="page__section-checkboxes" style="margin-top: 15px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;<%= check_box("tag", 'value', {class: "checkbox", checked: (bid.hostel == true)}) %>
+      <span>- в общежитии нуждаюсь</span>
+      <%= check_box("tag", 'value', {class: "checkbox", checked: (bid.hostel == false)}) %>
+      <span>- в общежитии не нуждаюсь</span>
+    </div>
+  </div>
+  <div class="page__section">
+    <div class="page__section-title">IV.&#8195;&#8195;Предполагаемая дата въезда:</div>
+      <p style="text-align: center" >
+        <%= bid.arrival_date %>
+      </p>
+    </p>
+    </div>
+  </div>
+</div>

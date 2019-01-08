@@ -1,0 +1,100 @@
+.page {
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.page__header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page__header-container {
+  width: 40%;
+}
+
+.page__header-text {
+  margin: 10px;
+}
+
+.page__header-text_name {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
+.page__header-text_description {
+  text-align: right;
+  width: 70%;
+  font-size: 13px;
+  margin-top: 0;
+}
+
+.page__title {
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.page_table {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_table__title {
+  margin-bottom: 0;
+}
+
+.page_table__data {
+  width: 90%;
+}
+
+.page_table__data-left {
+  text-align: left;
+  width: 35%;
+  padding-left: 20px;
+}
+
+.page_table__data-right {
+  text-align: center;
+}
+
+.page__section {
+  margin-top: 10px;
+}
+
+.page__section-title {
+  text-align: center;
+}
+
+.page__section-checkboxes {
+  display: flex;
+}
+
+.page__education-data__text {
+  margin: 10px 0;
+}
+
+.checkbox {
+  transform: scale(2);
+  -ms-transform: scale(2);
+  -webkit-transform: scale(2);
+  margin: 0;
+  margin-left: 20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+

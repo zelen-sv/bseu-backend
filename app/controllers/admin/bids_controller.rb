@@ -15,9 +15,11 @@ class Admin::BidsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "application",
-        template: "bids/print.html.erb",
-        layout: 'document'
+        application = BidPdf.new(@bid)
+        send_file application.to_pdf,
+               filename: application.filename,
+               type: "application/pdf",
+               disposition: "inline"
       end
     end
   end

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Приложение БГЭУ</title>
+  <style>
+    <%= Rails.application.assets.find_asset('bid_pdf.scss').to_s %>
+  </style>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

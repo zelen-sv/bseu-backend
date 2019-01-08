@@ -7,4 +7,8 @@ module ApplicationHelper
         when :alert then "alert alert-danger"
     end
   end
+
+  def gender_text(enum_value)
+    I18n.t :"enum.gender.#{enum_value}"
+  end
 end

@@ -18,6 +18,9 @@ ru:
       ochno: "Очно"
       zaochno: "Заочно"
       remote: "Дистанционно"
+    gender:
+      male: "мужской"
+      female: "женский"
   date:
     abbr_day_names:
     - Вс
