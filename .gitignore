@@ -32,3 +32,10 @@
 
 vendor/bundle/
 yarn.lock
+
+
+public/bid.pdf
+
+Passengerfile.json
+passenger.4002.pid
+passenger.4002.pid.lock
