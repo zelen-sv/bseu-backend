@@ -9,11 +9,11 @@ class TelegramNotificatorService
   end
 
   def token
-    Rails.application.credentials.development[:telegram][:token]
+    Rails.application.credentials.telegram[:token]
   end
 
   def chat_id
-    Rails.application.credentials.development[:telegram][:chat_id]
+    Rails.application.credentials.telegram[:chat_id]
   end
 
   def message_data
