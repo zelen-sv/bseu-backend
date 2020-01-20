@@ -19,7 +19,8 @@ class AmoCrm::LeadHook
       name:  lead_name,
       status_id: lead_status,
       responsible_user_id: lead_responsible_user,
-      platform_link: platform_link
+      platform_link: platform_link,
+      pipeline_id: pipeline_id
     )
 
     @lead.save!
@@ -54,5 +55,9 @@ class AmoCrm::LeadHook
 
   def platform_link
     admin_bid_url(@bid.id)
+  end
+
+  def pipeline_id
+    '2275357'
   end
 end
